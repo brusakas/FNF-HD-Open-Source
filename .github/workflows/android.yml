@@ -27,7 +27,7 @@ jobs:
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r15c
+          ndk-version: r21e
       # Setup JDK for Android
       - name: Setup Java JDK
         uses: actions/setup-java@main
