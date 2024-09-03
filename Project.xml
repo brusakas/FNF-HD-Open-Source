@@ -167,6 +167,19 @@
 	<haxedef name="NAPE_RELEASE_BUILD" unless="debug" />
 	<haxedef name="HXCPP_GC_GENERATIONAL"/>
 
+	<section if="mobile">
+		<architecture exclude="armv7" if="ONLY_ARM64" unless="UNIVERSAL"/>
+		<architecture include="arm64" if="ONLY_ARM64 || UNIVERSAL" />
+		<architecture include="armv7" if="ONLY_ARMV7 || UNIVERSAL" />
+		<architecture exclude="arm64" if="ONLY_ARMV7" unless="UNIVERSAL"/>
+	</section>
+
+	<!-- Android Setup-->
+	<section if="android">
+		<config:android target-sdk-version="34"/>
+		<config:android minimum-sdk-version="21"/>
+	</section>
+
 	<!-- _________________________________ Custom _______________________________ -->
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
