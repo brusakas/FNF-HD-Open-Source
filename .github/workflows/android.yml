@@ -33,7 +33,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           # distribution: 'oracle'
-          java-version: '11'
+          java-version: '17'
+      - name: Setup Android SDK
+        uses: Swisyn/setup-android-sdk@v1
       # - name: Setup Haxe Environment
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.1.5
