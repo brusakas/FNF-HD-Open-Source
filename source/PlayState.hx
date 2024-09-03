@@ -8,7 +8,7 @@ import animateatlas.AtlasFrameMaker;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.effects.FlxFlicker;
-#if desktop
+#if android
 import Discord.DiscordClient;
 #end
 import Section.SwagSection;
@@ -293,7 +293,7 @@ class PlayState extends MusicBeatState
 			if(FileSystem.exists("assets/data/" + SONG.song.toLowerCase() + "/dialogueEnd.txt"))
 		
 
-		#if desktop
+		#if android
 		// Making difficulty text for Discord Rich Presence.
 		switch (storyDifficulty)
 		{
@@ -1986,7 +1986,7 @@ class PlayState extends MusicBeatState
 	
 	override public function onFocusLost():Void
 	{
-		#if desktop
+		#if android
 		if (health > 0 && !paused)
 		{
 			DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
@@ -2154,7 +2154,7 @@ class PlayState extends MusicBeatState
 			
 			
 			
-			#if desktop
+			#if android
 			DiscordClient.changePresence(detailsPausedText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
 			#end
 		}
@@ -2182,7 +2182,7 @@ class PlayState extends MusicBeatState
 		{
 			FlxG.switchState(new ChartingState());
 
-			#if desktop
+			#if android
 			if (FlxG.random.bool(40))
 			DiscordClient.changePresence("Shart Editor", null, null, true);
 		
@@ -2465,7 +2465,7 @@ class PlayState extends MusicBeatState
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 			
-			#if desktop
+			#if android
 			// Game Over doesn't get his own variable because it's only used here
 			DiscordClient.changePresence("Game Over - " + detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC);
 			#end
