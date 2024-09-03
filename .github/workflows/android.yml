@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        flag: [ONLY_ARMV7, ONLY_ARM64]
+        flag: [ONLY_ARMV7, ONLY_ARM64, UNIVERSAL]
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
