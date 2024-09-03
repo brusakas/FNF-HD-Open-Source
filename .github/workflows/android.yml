@@ -32,7 +32,11 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install Libraries
         run: |
-          haxelib setup ~/haxelib
+          sudo add-apt-repository ppa:haxe/releases -y
+          sudo apt-get update
+          sudo apt-get install gcc-multilib g++-multilib haxe -y
+          mkdir "%HAXELIB_ROOT%"
+          haxelib setup "%HAXELIB_ROOT%"
           haxelib install lime 7.9.0 --quiet
           haxelib install openfl 9.1.0 --quiet
           haxelib --never install flixel 4.11.0 --quiet
