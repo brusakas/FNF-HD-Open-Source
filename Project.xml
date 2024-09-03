@@ -176,6 +176,8 @@
 
 	<!-- Android Setup-->
 	<section if="android">
+		<config:android gradle-version="8.0" gradle-plugin="8.1.0" />
+		
 		<config:android target-sdk-version="34"/>
 		<config:android minimum-sdk-version="21"/>
 	</section>
