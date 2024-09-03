@@ -59,7 +59,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
       - name: Install HXCPP and Rebuild it
         run: |
-          haxelib install hxcpp
+          haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
           haxelib run lime rebuild hxcpp
       # Compiles Build via Lime
       - name: Compile
