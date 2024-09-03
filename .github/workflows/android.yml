@@ -26,7 +26,8 @@ jobs:
           distribution: 'zulu'
           java-version: '11'
       # - name: Setup Haxe Environment
-      - uses: krdlab/setup-haxe@master
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@v1.1.5
         with:
           haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
@@ -51,6 +52,7 @@ jobs:
       # For Compiling to Work, do this
       - name: Configure Android
         run: |
+          haxelib run lime setup -alias -y
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
           haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME
