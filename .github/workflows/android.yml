@@ -22,20 +22,12 @@ jobs:
       - uses: actions/checkout@main
         with:
           submodules: true
-      # For NDK to work shit
-      - name: Setup Android NDK
-        uses: nttld/setup-ndk@v1
-        id: setup-ndk
-        with:
-          ndk-version: r21e
-      # Setup JDK for Android
+      # For NDK to work sh
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
       # - name: Setup Haxe Environment
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.1.5
