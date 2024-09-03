@@ -1671,8 +1671,8 @@ class PlayState extends MusicBeatState
 
 		// Updating Discord Rich Presence (with Time Left)
 		DiscordClient.changePresence(detailsText, SONG.song + " (" + storyDifficultyText + ")", iconRPC, true, songLength);
-		#end
 		if (curStage == 'sonic-stage')FlxTween.tween(terrain, {x:0}, songLength, {ease:FlxEase.linear});
+		#end
 	}
 
 	var debugNum:Int = 0;
