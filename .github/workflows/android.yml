@@ -18,7 +18,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
       # Setup JDK for Android
       - name: Setup Java JDK
         uses: actions/setup-java@main
@@ -26,7 +26,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       # - name: Setup Haxe Environment
-      - uses: krdlab/setup-haxe@v1.5.1
+      - uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
@@ -45,8 +45,7 @@ jobs:
           haxelib --global install polymod
           haxelib git faxe https://github.com/uhrobots/faxe
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
-          haxelib git extension-webm https://github.com/KadeDev/extension-webm
-          haxelib run lime rebuild extension-webm windows
+          haxelib git extension-webm https://github.com/brusakas/extension-webm
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit.git
           haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
           haxelib install actuate 
@@ -63,7 +62,7 @@ jobs:
         run: |
           haxelib run lime build android -D ${{matrix.flag}}
           
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@main
         with:
-          name: Windows Build
-          path: export/release/windows/bin
+          name: Android Build-${{matrix.flag}}
+          path: export/release/android/bin/app/build/outputs/apk/debug
