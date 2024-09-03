@@ -26,12 +26,12 @@ jobs:
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
-          ndk-version: r15c
+          ndk-version: r21e
       - name: Setup Java JDK
         uses: actions/setup-java@v1
         with:
           # distribution: 'oracle'
-          java-version: '1.8'
+          java-version: '11'
       # - name: Setup Haxe Environment
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.1.5
