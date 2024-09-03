@@ -24,10 +24,10 @@ jobs:
           submodules: true
       # Setup JDK for Android
       - name: Setup Java JDK
-        uses: actions/setup-java@main
+        uses: actions/setup-java@v1
         with:
-          distribution: 'oracle'
-          java-version: '17'
+          # distribution: 'oracle'
+          java-version: '1.8'
       # - name: Setup Haxe Environment
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.1.5
