@@ -19,7 +19,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2.3.1
+      - uses: actions/checkout@main
         with:
           submodules: true
       - name: Setup Android NDK
@@ -30,8 +30,10 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
-          distribution: 'zulu'
-          java-version: '11'
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
       # - name: Setup Haxe Environment
       - name: Setup Haxe
         uses: krdlab/setup-haxe@v1.1.5
@@ -75,7 +77,7 @@ jobs:
         run: |
           haxelib run lime build android -D ${{matrix.flag}}
           
-      - uses: actions/upload-artifact@v2.2.4
+      - uses: actions/upload-artifact@main
         with:
           name: Android Build-${{matrix.flag}}
           path: export/release/android/bin/app/build/outputs/apk/debug
