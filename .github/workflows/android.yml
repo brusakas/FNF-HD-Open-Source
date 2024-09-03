@@ -25,7 +25,7 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
-          distribution: 'zulu'
+          distribution: 'oracle'
           java-version: '11'
       # - name: Setup Haxe Environment
       - name: Setup Haxe
