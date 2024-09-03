@@ -30,8 +30,9 @@ jobs:
           ndk-version: r21e
       # Setup JDK for Android
       - name: Setup Java JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@main
         with:
+          distribution: 'zulu'
           java-version: '11'
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
