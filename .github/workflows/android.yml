@@ -23,8 +23,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: 'zulu'
+          java-version: '11'
       # - name: Setup Haxe Environment
       - uses: krdlab/setup-haxe@master
         with:
@@ -32,8 +32,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Install Libraries
         run: |
-          mkdir "%HAXELIB_ROOT%"
-          haxelib setup "%HAXELIB_ROOT%"
+          haxelib setup ~/haxelib
+          haxelib install hxcpp > /dev/null
           haxelib install lime 7.9.0 --quiet
           haxelib install openfl 9.1.0 --quiet
           haxelib --never install flixel 4.11.0 --quiet
