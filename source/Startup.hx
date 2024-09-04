@@ -12,7 +12,7 @@ import flixel.math.FlxRect;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import flixel.text.FlxText;
-import sys.FileSystem;
+import SUtil.getStorageDirectory() + sys.FileSystem;
 import flixel.FlxG;
 import haxe.ds.Map;
 
