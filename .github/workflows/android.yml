@@ -72,6 +72,8 @@ jobs:
         run: |
           haxelib git hxcpp https://github.com/HaxeFoundation/hxcpp.git
           haxelib run lime rebuild hxcpp
+          haxelib run lime config HXCPP_ARM64 true
+          haxelib run lime config HXCPP_x86 true
       # Compiles Build via Lime
       - name: Compile
         run: |
