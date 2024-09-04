@@ -4,6 +4,10 @@ import flixel.FlxG;
 import flixel.graphics.frames.FlxAtlasFrames;
 import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;
+#if android
+import sys.io.File;
+import sys.FileSystem;
+#end
 
 class Paths
 {
