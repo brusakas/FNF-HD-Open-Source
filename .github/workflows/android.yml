@@ -50,7 +50,7 @@ jobs:
           haxelib install flixel-ui 2.3.3 --quiet
           haxelib install hscript
           haxelib install newgrounds 1.4.0
-          haxelib --global install polymod
+          haxelib git polymod https://github.com/larsiusprime/polymod.git f3c0320aa51c848318934c2893ed78f42b7de74c
           haxelib git faxe https://github.com/uhrobots/faxe
           haxelib git discord_rpc https://github.com/dead8309/KizzyRPC
           haxelib git extension-webm https://github.com/brusakas/extension-webm
