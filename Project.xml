@@ -126,7 +126,7 @@
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="desktop"/>
-	<haxelib name="extension-androidtools" if="android" />
+	<haxelib name="AndroidTools" if="android"/>
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 	<!-- <haxelib name="markdown" /> -->
@@ -177,6 +177,9 @@
 
 	<!-- Android Setup-->
 	<section if="android">
+		<config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
+                <config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
+		
 		<config:android gradle-version="7.4.2" gradle-plugin="7.3.1" />
 	</section>
 
